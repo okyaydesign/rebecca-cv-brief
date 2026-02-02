@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebecca's CV Brief</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest: #1a2e1a; --forest-light: #2a4e2a; --sage: #8CB88C; --sage-light: #eef5ee;
+      --terracotta: #C8553D; --terracotta-dark: #a8432e; --cream: #FDFBF7; --warm-white: #fff;
+      --text-primary: #1a2e1a; --text-secondary: #555; --text-muted: #999;
+      --border: #e0dcd4; --border-light: #eee;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; background: var(--cream); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+    .header { background: var(--forest); color: var(--cream); padding: 40px 24px 36px; position: relative; overflow: hidden; }
+    .header-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .header-tag { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; font-weight: 500; }
+    .header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 400; margin-bottom: 8px; }
+    .header p { font-size: 15px; color: #a0b5a0; line-height: 1.6; max-width: 560px; }
+    .main { max-width: 720px; margin: 0 auto; padding: 28px 24px 100px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 30px; }
+    .pill { padding: 7px 14px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--warm-white); color: #666; font-size: 12.5px; cursor: pointer; transition: all 0.2s; }
+    .pill.active { border-color: var(--terracotta); background: var(--terracotta); color: #fff; }
+    .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 400; color: var(--text-primary); margin-bottom: 6px; }
+    .field-label { display: block; font-size: 14.5px; color: var(--text-primary); margin-bottom: 9px; font-weight: 500; }
+    .field-input, .field-textarea { width: 100%; padding: 14px 16px; border-radius: 10px; border: 1.5px solid var(--border); font-size: 14px; font-family: 'Source Sans 3', sans-serif; background: var(--warm-white); color: #333; }
+    .field-textarea { resize: vertical; min-height: 110px; }
+    .field-input:focus, .field-textarea:focus { border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(200, 85, 61, 0.08); }
+    .nav-btn { padding: 13px 26px; border-radius: 8px; font-size: 14.5px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; transition: all 0.2s; font-weight: 500; }
+    .nav-btn-next { background: var(--forest); color: #fff; border: none; }
+    .nav-btn-finish { background: var(--terracotta); color: #fff; font-weight: 600; border: none; }
+    .output-banner { background: var(--forest); color: var(--cream); border-radius: 16px; padding: 40px 36px; margin-bottom: 28px; }
+    .copy-btn { width: 100%; padding: 16px 24px; background: var(--terracotta); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .output-pre { background: var(--warm-white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; font-size: 13px; line-height: 1.75; white-space: pre-wrap; word-break: break-word; color: #3a3a3a; max-height: 550px; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>div>
+    <div class="autosave" id="autosave">✓ Saved locally</div>div>
+    <script>
+      const SECTIONS = [
+        {id: "personal", title: "The Basics", subtitle: "Let's start with your contact details.", fields: [
+          {id: "fullName", label: "Full name", type: "text", placeholder: "Rebecca Manley"},
+          {id: "location", label: "Where are you based?", type: "text", placeholder: "e.g. London"},
+          {id: "phone", label: "Phone number", type: "text", placeholder: "+44"},
+          {id: "email", label: "Email address", type: "text", placeholder: "email@example.com"},
+          {id: "linkedin", label: "LinkedIn URL", type: "text", placeholder: "linkedin.com"},
+          {id: "otherLinks", label: "Any other links?", type: "text", placeholder: "Optional"}
+            ]},
+        {id: "headline", title: "Your Story", subtitle: "Capture who you really are.", fields: [
+          {id: "elevatorPitch", label: "30-second elevator pitch", type: "textarea", placeholder: "Tell us naturally"},
+          {id: "proudestMoment", label: "Proudest achievement", type: "textarea", placeholder: "Your key moment"},
+          {id: "whatPeoplesSay", label: "What colleagues say", type: "textarea", placeholder: "Your reputation"},
+          {id: "superpower", label: "Your superpower", type: "textarea", placeholder: "What you do best"}
+            ]},
+        {id: "jimRyan", title: "The Jim Ryan Years", subtitle: "Your partnership with Jim.", fields: [
+          {id: "jimRelationship", label: "Working relationship", type: "textarea", placeholder: "The dynamic"},
+          {id: "jimHighStakes", label: "High-stakes moments", type: "textarea", placeholder: "Critical deliverables"},
+          {id: "jimScope", label: "Scale managed", type: "textarea", placeholder: "Numbers and scope"},
+          {id: "jimQuote", label: "Feedback from Jim", type: "textarea", placeholder: "Recognition moment"}
+            ]},
+        {id: "sonyCareer", title: "The Sony Journey", subtitle: "24 years of growth.", fields: [
+          {id: "whyStayed", label: "Why stay so long?", type: "textarea", placeholder: "What you loved"},
+          {id: "careerProgression", label: "Career promotions", type: "textarea", placeholder: "Your progression"},
+          {id: "earlyRoles", label: "Early roles", type: "textarea", placeholder: "2000-2011 roles"},
+          {id: "bigEvents", label: "Major events", type: "textarea", placeholder: "Highlights"},
+          {id: "teamLeadership", label: "Team leadership", type: "textarea", placeholder: "Teams and approach"},
+          {id: "sonyNumbers", label: "Numbers and scale", type: "textarea", placeholder: "Quantifiable achievements"}
+            ]},
+        {id: "recentRole", title: "Recent Chapter", subtitle: "Contract role support.", fields: [
+          {id: "svpRoleContext", label: "How it came about", type: "textarea", placeholder: "Being asked back"},
+          {id: "svpAchievements", label: "Achievements", type: "textarea", placeholder: "What you delivered"},
+          {id: "svpEndDate", label: "End date", type: "text", placeholder: "When did it end?"}
+            ]},
+        {id: "skills", title: "Skills & Expertise", subtitle: "What you excel at.", fields: [
+          {id: "technicalSkills", label: "Technical skills", type: "textarea", placeholder: "Software and tools"},
+          {id: "languages", label: "Languages", type: "text", placeholder: "Any languages"},
+          {id: "uniqueSkills", label: "Unique skills", type: "textarea", placeholder: "What sets you apart"},
+          {id: "industryKnowledge", label: "Industry knowledge", type: "textarea", placeholder: "Your expertise"}
+            ]},
+        {id: "education", title: "Education", subtitle: "Your background.", fields: [
+          {id: "educationDetail", label: "Film & Television HND", type: "textarea", placeholder: "How it helped"},
+          {id: "additionalTraining", label: "Training since", type: "textarea", placeholder: "Development"},
+          {id: "sailingCert", label: "Sailing certificate", type: "textarea", placeholder: "Include it?"}
+            ]},
+        {id: "targetRole", title: "What's Next?", subtitle: "Your future direction.", fields: [
+          {id: "dreamRole", label: "Ideal next role", type: "textarea", placeholder: "Chief of Staff?"},
+          {id: "industries", label: "Industries", type: "textarea", placeholder: "Where you want to be"},
+          {id: "dealbreakers", label: "Non-negotiables", type: "text", placeholder: "What matters"},
+          {id: "whyHireYou", label: "Why hire you?", type: "textarea", placeholder: "Your value"}
+            ]},
+        {id: "personality", title: "The Real Rebecca", subtitle: "Your energy and personality.", fields: [
+          {id: "interests", label: "Interests & passions", type: "textarea", placeholder: "What lights you up"},
+          {id: "volunteering", label: "Volunteering", type: "textarea", placeholder: "Community involvement"},
+          {id: "personalBrand", label: "Three words", type: "text", placeholder: "Describe yourself"},
+          {id: "anythingElse", label: "Anything else?", type: "textarea", placeholder: "Catch-all"}
+            ]}
+        ];
+
+      let formData = {}, currentSection = 0, viewMode = 'guided', expandedSections = new Set([0]), submitted = false;
+
+      function saveLocal() { localStorage.setItem('rebecca_cv_brief', JSON.stringify(formData)); }
+      function loadSaved() { try { formData = JSON.parse(localStorage.getItem('rebecca_cv_brief')) || {}; } catch(e) {} }
+      function render() { loadSaved(); const app = document.getElementById('app'); app.innerHTML = submitted ? renderOutput() : renderForm(); }
+      function renderForm() { const sec = SECTIONS[currentSection], prog = calcProgress(); return `<div class="header"><div class="header-inner"><div class="header-tag">CV Project</div><h1>Rebecca's CV Brief</h1><p>Answer these questions to build your CV. Your answers save automatically.</p></div></div><div class="main"><div class="section-title">${sec.title}</div><p style="margin-bottom:20px;color:#999">${sec.subtitle}</p>${sec.fields.map(f => `<div style="margin-bottom:20px"><label class="field-label">${f.label}</label>${f.type === 'textarea' ? `<textarea class="field-textarea" placeholder="${f.placeholder}" oninput="updateField('${f.id}', this.value)">${formData[f.id]||''}</textarea>` : `<input type="text" class="field-input" placeholder="${f.placeholder}" value="${formData[f.id]||''}" oninput="updateField('${f.id}', this.value)">`}</div>`).join('')}<div style="margin-top:36px;display:flex;justify-content:space-between"><button onclick="goToSection(${currentSection-1})" ${currentSection===0?'disabled':''} style="padding:10px 20px;border:1px solid #ccc;border-radius:6px;cursor:pointer">← Previous</button><button onclick="${currentSection===SECTIONS.length-1?'doSubmit()':'goToSection('+parseInt(currentSection+1)+')'}" style="padding:10px 20px;background:var(--forest);color:white;border:none;border-radius:6px;cursor:pointer">${currentSection===SECTIONS.length-1?'Finish →':'Next →'}</button></div></div>`; }
+      function renderOutput() { let out = 'REBECCA MANLEY — CV BRIEF\n\n'; SECTIONS.forEach(sec => { if(sec.fields.some(f => (formData[f.id]||'').trim())) { out += sec.title.toUpperCase() + '\n' + '─'.repeat(40) + '\n'; sec.fields.forEach(f => { if((formData[f.id]||'').trim()) out += f.label + '\n' + formData[f.id].trim() + '\n\n'; }); } }); return `<div class="output-banner" style="max-width:720px;margin:40px auto"><h1>Thank you, Rebecca!</h1><p>Copy below and send to Jules.</p></div><div style="max-width:720px;margin:0 auto;padding:20px"><button class="copy-btn" onclick="copyToClip()">Copy all responses</button><pre class="output-pre">${out}</pre><button onclick="goBack()" style="margin-top:20px;padding:10px 20px;border:1px solid #ccc;background:white;border-radius:6px;cursor:pointer">← Go back</button></div>`; }
+      function calcProgress() { let filled = 0, total = 0; SECTIONS.forEach(s => { total += s.fields.length; s.fields.forEach(f => { if((formData[f.id]||'').trim()) filled++; }); }); return {filled, total, pct: Math.round((filled/total)*100)}; }
+      function updateField(id, val) { formData[id] = val; saveLocal(); }
+      function goToSection(idx) { if(idx >= 0 && idx < SECTIONS.length) { currentSection = idx; render(); } }
+      function doSubmit() { saveLocal(); submitted = true; render(); }
+      function goBack() { submitted = false; render(); }
+      function copyToClip() { let out = 'REBECCA MANLEY — CV BRIEF\n\n'; SECTIONS.forEach(sec => { if(sec.fields.some(f => (formData[f.id]||'').trim())) { out += sec.title.toUpperCase() + '\n' + '─'.repeat(40) + '\n'; sec.fields.forEach(f => { if((formData[f.id]||'').trim()) out += f.label + '\n' + formData[f.id].trim() + '\n\n'; }); } }); navigator.clipboard.writeText(out); alert('Copied!'); }
+      loadSaved(); render();
+    </script>
+  </body>
+</html>html>
+    </script>
+  </body>
+  </style></title>
+  </head>
