@@ -1,121 +1,866 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Rebecca's CV Brief</title>
+  
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap');
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --forest: #1a2e1a; --forest-light: #2a4e2a; --sage: #8CB88C; --sage-light: #eef5ee;
-      --terracotta: #C8553D; --terracotta-dark: #a8432e; --cream: #FDFBF7; --warm-white: #fff;
-      --text-primary: #1a2e1a; --text-secondary: #555; --text-muted: #999;
-      --border: #e0dcd4; --border-light: #eee;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; background: var(--cream); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
-    .header { background: var(--forest); color: var(--cream); padding: 40px 24px 36px; position: relative; overflow: hidden; }
-    .header-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
-    .header-tag { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; font-weight: 500; }
-    .header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 400; margin-bottom: 8px; }
-    .header p { font-size: 15px; color: #a0b5a0; line-height: 1.6; max-width: 560px; }
-    .main { max-width: 720px; margin: 0 auto; padding: 28px 24px 100px; }
-    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 30px; }
-    .pill { padding: 7px 14px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--warm-white); color: #666; font-size: 12.5px; cursor: pointer; transition: all 0.2s; }
-    .pill.active { border-color: var(--terracotta); background: var(--terracotta); color: #fff; }
-    .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 400; color: var(--text-primary); margin-bottom: 6px; }
-    .field-label { display: block; font-size: 14.5px; color: var(--text-primary); margin-bottom: 9px; font-weight: 500; }
-    .field-input, .field-textarea { width: 100%; padding: 14px 16px; border-radius: 10px; border: 1.5px solid var(--border); font-size: 14px; font-family: 'Source Sans 3', sans-serif; background: var(--warm-white); color: #333; }
-    .field-textarea { resize: vertical; min-height: 110px; }
-    .field-input:focus, .field-textarea:focus { border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(200, 85, 61, 0.08); }
-    .nav-btn { padding: 13px 26px; border-radius: 8px; font-size: 14.5px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; transition: all 0.2s; font-weight: 500; }
-    .nav-btn-next { background: var(--forest); color: #fff; border: none; }
-    .nav-btn-finish { background: var(--terracotta); color: #fff; font-weight: 600; border: none; }
-    .output-banner { background: var(--forest); color: var(--cream); border-radius: 16px; padding: 40px 36px; margin-bottom: 28px; }
-    .copy-btn { width: 100%; padding: 16px 24px; background: var(--terracotta); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
-    .output-pre { background: var(--warm-white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; font-size: 13px; line-height: 1.75; white-space: pre-wrap; word-break: break-word; color: #3a3a3a; max-height: 550px; overflow: auto; }
+
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+      *, ::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+            --forest: #1a2e1a;
+            --forest-light: #2a4e2a;
+            --sage: #8CB88C;
+            --sage-light: #eef5ee;
+            --terracotta: #C8553D;
+            --terracotta-dark: #a8432e;
+            --cream: #FDFBF7;
+            --warm-white: #fff;
+            --text-primary: #1a2e1a;
+            --text-secondary: #555;
+            --text-muted: #999;
+            --border: #e0dcd4;
+            --border-light: #eee;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+            font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+      }
+
+      .header {
+            background: var(--forest);
+            color: var(--cream);
+            padding: 40px 24px 36px;
+            position: relative;
+            overflow: hidden;
+      }
+
+      .header::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(140,184,140,0.08) 0%, transparent 70%);
+            pointer-events: none;
+      }
+
+      .header-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+
+      .header-tag {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 10px;
+            font-weight: 500;
+      }
+
+      .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            line-height: 1.25;
+      }
+
+      .header p {
+            font-size: 15px;
+            color: #a0b5a0;
+            line-height: 1.6;
+            max-width: 560px;
+      }
+
+      .header p strong { color: #c0d5c0; font-weight: 500; }
+
+      .progress-wrap { margin-top: 24px; }
+
+      .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--sage);
+            margin-bottom: 7px;
+            font-weight: 500;
+      }
+
+      .progress-bar {
+            height: 5px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+      }
+
+      .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sage), var(--terracotta));
+            border-radius: 3px;
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 0%;
+      }
+
+      .view-toggle {
+            margin-top: 18px;
+            display: flex;
+            gap: 8px;
+      }
+
+      .view-btn {
+            padding: 7px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: var(--sage);
+            font-size: 12.5px;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.2s;
+      }
+
+      .view-btn.active {
+            background: rgba(255,255,255,0.14);
+            color: #fff;
+      }
+
+      .view-btn:hover { background: rgba(255,255,255,0.1); }
+
+      .main { max-width: 720px; margin: 0 auto; padding: 28px 24px 100px; }
+
+      .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 30px; }
+
+      .pill {
+            padding: 7px 14px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--warm-white);
+            color: #666;
+            font-size: 12.5px;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.2s;
+            white-space: nowrap;
+      }
+
+      .pill:hover { border-color: #bbb; }
+
+      .pill.active { border-color: var(--terracotta); background: var(--terracotta); color: #fff; }
+
+      .pill.complete { border-color: var(--sage); background: var(--sage-light); color: #3a6b3a; }
+
+      .section-header { margin-bottom: 30px; }
+
+      .section-tag {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 6px;
+            font-weight: 600;
+      }
+
+      .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.25;
+      }
+
+      .section-subtitle {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+      }
+
+      .field-group { margin-bottom: 26px; }
+
+      .field-label {
+            display: block;
+            font-size: 14.5px;
+            color: var(--text-primary);
+            margin-bottom: 9px;
+            line-height: 1.45;
+            font-weight: 500;
+      }
+
+      .field-input, .field-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1.5px solid var(--border);
+            font-size: 14px;
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--warm-white);
+            color: #333;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            line-height: 1.6;
+      }
+
+      .field-textarea { resize: vertical; min-height: 110px; }
+
+      .field-input:focus, .field-textarea:focus {
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px rgba(200, 85, 61, 0.08);
+      }
+
+      .field-input::placeholder, .field-textarea::placeholder {
+            color: #bbb;
+            font-style: italic;
+      }
+
+      .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+      }
+
+      .nav-btn {
+            padding: 13px 26px;
+            border-radius: 8px;
+            font-size: 14.5px;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.2s;
+            font-weight: 500;
+      }
+
+      .nav-btn-prev {
+            border: 1px solid var(--border);
+            background: var(--warm-white);
+            color: #666;
+      }
+
+      .nav-btn-prev:hover { background: #f5f5f5; }
+
+      .nav-btn-prev:disabled { color: #ccc; cursor: default; }
+
+      .nav-btn-prev:disabled:hover { background: var(--warm-white); }
+
+      .nav-btn-next {
+            border: none;
+            background: var(--forest);
+            color: #fff;
+      }
+
+      .nav-btn-next:hover { background: var(--forest-light); }
+
+      .nav-btn-finish {
+            border: none;
+            background: var(--terracotta);
+            color: #fff;
+            font-weight: 600;
+      }
+
+      .nav-btn-finish:hover { background: var(--terracotta-dark); }
+
+      .accordion-item {
+            margin-bottom: 14px;
+            background: var(--warm-white);
+            border-radius: 12px;
+            border: 1.5px solid var(--border);
+            overflow: hidden;
+            transition: border-color 0.2s;
+      }
+
+      .accordion-item:hover { border-color: #ccc; }
+
+      .accordion-header {
+            width: 100%;
+            padding: 18px 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Source Sans 3', sans-serif;
+            text-align: left;
+      }
+
+      .accordion-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 17px;
+            color: var(--text-primary);
+            font-weight: 400;
+      }
+
+      .accordion-count { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+      .accordion-chevron {
+            font-size: 16px;
+            color: #aaa;
+            transition: transform 0.25s;
+      }
+
+      .accordion-chevron.open { transform: rotate(180deg); }
+
+      .accordion-body { padding: 0 22px 24px; }
+
+      .accordion-body .section-subtitle { margin-bottom: 20px; font-size: 13.5px; }
+
+      .accordion-body .field-group { margin-bottom: 22px; }
+
+      .accordion-body .field-label { font-size: 13.5px; }
+
+      .accordion-body .field-input, .accordion-body .field-textarea {
+            font-size: 13.5px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            background: var(--cream);
+      }
+
+      .accordion-body .field-textarea { min-height: 90px; }
+
+      .submit-all {
+            width: 100%;
+            padding: 17px 28px;
+            border-radius: 10px;
+            border: none;
+            background: var(--terracotta);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            margin-top: 18px;
+            transition: background 0.2s;
+      }
+
+      .submit-all:hover { background: var(--terracotta-dark); }
+
+      .autosave {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background: var(--forest);
+            color: var(--sage);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      }
+
+      .autosave.show { opacity: 1; }
+
+      .output-screen { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+
+      .output-banner {
+            background: var(--forest);
+            color: var(--cream);
+            border-radius: 16px;
+            padding: 40px 36px;
+            margin-bottom: 28px;
+      }
+
+      .output-banner .header-tag { margin-bottom: 12px; }
+
+      .output-banner h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 12px;
+      }
+
+      .output-banner p { font-size: 15px; line-height: 1.6; color: #b8c9b8; }
+
+      .copy-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--terracotta);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+            transition: background 0.2s;
+      }
+
+      .copy-btn:hover { background: var(--terracotta-dark); }
+
+      .copy-btn.copied { background: var(--forest); }
+
+      .copy-hint {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-style: italic;
+      }
+
+      .output-pre {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+            font-size: 13px;
+            line-height: 1.75;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #3a3a3a;
+            font-family: 'Source Code Pro', 'Courier New', monospace;
+            max-height: 550px;
+            overflow: auto;
+      }
+
+      .back-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: transparent;
+            color: #888;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.2s;
+      }
+
+      .back-btn:hover { border-color: #bbb; color: #666; }
+
+      @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+      }
+
+      .fade-in { animation: fadeSlideIn 0.35s ease forwards; }
+
+      @media (max-width: 600px) {
+            .header { padding: 32px 18px 28px; }
+            .header h1 { font-size: 24px; }
+            .main { padding: 22px 18px 100px; }
+            .section-title { font-size: 22px; }
+            .pills { gap: 5px; }
+            .pill { padding: 6px 11px; font-size: 11.5px; }
+            .nav-bar { gap: 10px; }
+            .nav-btn { padding: 12px 18px; font-size: 13.5px; }
+            .output-banner { padding: 28px 22px; }
+            .output-banner h1 { font-size: 23px; }
+      }
+
     </style>
+
   </head>
+
   <body>
+
     <div id="app"></div>div>
+
     <div class="autosave" id="autosave">✓ Saved locally</div>div>
+
     <script>
+
       const SECTIONS = [
-        {id: "personal", title: "The Basics", subtitle: "Let's start with your contact details.", fields: [
-          {id: "fullName", label: "Full name", type: "text", placeholder: "Rebecca Manley"},
-          {id: "location", label: "Where are you based?", type: "text", placeholder: "e.g. London"},
-          {id: "phone", label: "Phone number", type: "text", placeholder: "+44"},
-          {id: "email", label: "Email address", type: "text", placeholder: "email@example.com"},
-          {id: "linkedin", label: "LinkedIn URL", type: "text", placeholder: "linkedin.com"},
-          {id: "otherLinks", label: "Any other links?", type: "text", placeholder: "Optional"}
-            ]},
-        {id: "headline", title: "Your Story", subtitle: "Capture who you really are.", fields: [
-          {id: "elevatorPitch", label: "30-second elevator pitch", type: "textarea", placeholder: "Tell us naturally"},
-          {id: "proudestMoment", label: "Proudest achievement", type: "textarea", placeholder: "Your key moment"},
-          {id: "whatPeoplesSay", label: "What colleagues say", type: "textarea", placeholder: "Your reputation"},
-          {id: "superpower", label: "Your superpower", type: "textarea", placeholder: "What you do best"}
-            ]},
-        {id: "jimRyan", title: "The Jim Ryan Years", subtitle: "Your partnership with Jim.", fields: [
-          {id: "jimRelationship", label: "Working relationship", type: "textarea", placeholder: "The dynamic"},
-          {id: "jimHighStakes", label: "High-stakes moments", type: "textarea", placeholder: "Critical deliverables"},
-          {id: "jimScope", label: "Scale managed", type: "textarea", placeholder: "Numbers and scope"},
-          {id: "jimQuote", label: "Feedback from Jim", type: "textarea", placeholder: "Recognition moment"}
-            ]},
-        {id: "sonyCareer", title: "The Sony Journey", subtitle: "24 years of growth.", fields: [
-          {id: "whyStayed", label: "Why stay so long?", type: "textarea", placeholder: "What you loved"},
-          {id: "careerProgression", label: "Career promotions", type: "textarea", placeholder: "Your progression"},
-          {id: "earlyRoles", label: "Early roles", type: "textarea", placeholder: "2000-2011 roles"},
-          {id: "bigEvents", label: "Major events", type: "textarea", placeholder: "Highlights"},
-          {id: "teamLeadership", label: "Team leadership", type: "textarea", placeholder: "Teams and approach"},
-          {id: "sonyNumbers", label: "Numbers and scale", type: "textarea", placeholder: "Quantifiable achievements"}
-            ]},
-        {id: "recentRole", title: "Recent Chapter", subtitle: "Contract role support.", fields: [
-          {id: "svpRoleContext", label: "How it came about", type: "textarea", placeholder: "Being asked back"},
-          {id: "svpAchievements", label: "Achievements", type: "textarea", placeholder: "What you delivered"},
-          {id: "svpEndDate", label: "End date", type: "text", placeholder: "When did it end?"}
-            ]},
-        {id: "skills", title: "Skills & Expertise", subtitle: "What you excel at.", fields: [
-          {id: "technicalSkills", label: "Technical skills", type: "textarea", placeholder: "Software and tools"},
-          {id: "languages", label: "Languages", type: "text", placeholder: "Any languages"},
-          {id: "uniqueSkills", label: "Unique skills", type: "textarea", placeholder: "What sets you apart"},
-          {id: "industryKnowledge", label: "Industry knowledge", type: "textarea", placeholder: "Your expertise"}
-            ]},
-        {id: "education", title: "Education", subtitle: "Your background.", fields: [
-          {id: "educationDetail", label: "Film & Television HND", type: "textarea", placeholder: "How it helped"},
-          {id: "additionalTraining", label: "Training since", type: "textarea", placeholder: "Development"},
-          {id: "sailingCert", label: "Sailing certificate", type: "textarea", placeholder: "Include it?"}
-            ]},
-        {id: "targetRole", title: "What's Next?", subtitle: "Your future direction.", fields: [
-          {id: "dreamRole", label: "Ideal next role", type: "textarea", placeholder: "Chief of Staff?"},
-          {id: "industries", label: "Industries", type: "textarea", placeholder: "Where you want to be"},
-          {id: "dealbreakers", label: "Non-negotiables", type: "text", placeholder: "What matters"},
-          {id: "whyHireYou", label: "Why hire you?", type: "textarea", placeholder: "Your value"}
-            ]},
-        {id: "personality", title: "The Real Rebecca", subtitle: "Your energy and personality.", fields: [
-          {id: "interests", label: "Interests & passions", type: "textarea", placeholder: "What lights you up"},
-          {id: "volunteering", label: "Volunteering", type: "textarea", placeholder: "Community involvement"},
-          {id: "personalBrand", label: "Three words", type: "text", placeholder: "Describe yourself"},
-          {id: "anythingElse", label: "Anything else?", type: "textarea", placeholder: "Catch-all"}
-            ]}
+        {
+              id: "personal",
+              title: "The Basics",
+              subtitle: "Let's start with your contact details and how you'd like to be found.",
+              fields: [
+                { id: "fullName", label: "Full name", type: "text", placeholder: "Rebecca Manley" },
+                { id: "location", label: "Where are you based?", type: "text", placeholder: "e.g. London / Brighton & Hove" },
+                { id: "phone", label: "Phone number", type: "text", placeholder: "+44 7970 913029" },
+                { id: "email", label: "Email address", type: "text", placeholder: "rebeccalouisemanley@gmail.com" },
+                { id: "linkedin", label: "LinkedIn URL", type: "text", placeholder: "linkedin.com/in/rebeccalouisemanley" },
+                { id: "otherLinks", label: "Any other links? (portfolio, personal site, etc.)", type: "text", placeholder: "Optional" }
+                    ]
+        },
+        {
+              id: "headline",
+              title: "Your Story in a Nutshell",
+              subtitle: "This will help us craft a compelling profile summary that captures who you really are.",
+              fields: [
+                { id: "elevatorPitch", label: "If you had 30 seconds in a lift with a dream employer, what would you want them to know about you?", type: "textarea", placeholder: "Don't overthink this — just speak naturally. What makes you, you?" },
+                { id: "proudestMoment", label: "What's the single professional achievement you're most proud of?", type: "textarea", placeholder: "Think about a moment where you thought 'I really nailed that'..." },
+                { id: "whatPeoplesSay", label: "If Jim Ryan or a close colleague were introducing you to someone, what would they say?", type: "textarea", placeholder: "What do people consistently praise you for? What's your reputation?" },
+                { id: "superpower", label: "What's your professional superpower — the thing you do better than almost anyone?", type: "textarea", placeholder: "e.g. Reading a room, anticipating needs before they arise, making chaos feel calm..." }
+                    ]
+        },
+        {
+              id: "jimRyan",
+              title: "The Jim Ryan Years",
+              subtitle: "Your long partnership with Jim is a huge part of your story. Let's capture the weight of it properly.",
+              fields: [
+                { id: "jimRelationship", label: "How would you describe your working relationship with Jim? What made it work so well for so many years?", type: "textarea", placeholder: "Trust, anticipation, communication style — what was the dynamic?" },
+                { id: "jimHighStakes", label: "Can you recall specific high-stakes moments where Jim relied on you to deliver something critical?", type: "textarea", placeholder: "Major events, crises averted, last-minute changes, confidential projects..." },
+                { id: "jimScope", label: "What was the scale of Jim's world that you managed? (team size, global offices, budget, events, stakeholders)", type: "textarea", placeholder: "Numbers and scale help paint the picture — how many countries, how many direct reports, how big were the events?" },
+                { id: "jimQuote", label: "Did Jim (or any senior exec) ever say something about you or your work that stuck with you?", type: "textarea", placeholder: "A compliment, a moment of recognition, feedback that meant a lot..." }
+                    ]
+        },
+        {
+              id: "sonyCareer",
+              title: "The Full Sony Journey",
+              subtitle: "24 years is extraordinary. Let's capture the story of how you grew through the organisation.",
+              fields: [
+                { id: "whyStayed", label: "What kept you at Sony/PlayStation for 24 years? What did you love about it?", type: "textarea", placeholder: "The culture, the people, the industry, the challenge..." },
+                { id: "careerProgression", label: "Walk us through your promotions — why were you promoted each time? What did you prove?", type: "textarea", placeholder: "From PA to VP Finance → EA to EVP → EA to Co-COO → EA to President & CEO... what drove each step up?" },
+                { id: "earlyRoles", label: "Tell us about the earlier roles (2000–2011). What were the highlights and key responsibilities?", type: "textarea", placeholder: "These years are currently almost invisible on your CV — what should people know about this period?" },
+                { id: "bigEvents", label: "What were the biggest events or projects you managed? Give us the highlights reel.", type: "textarea", placeholder: "E3, Gamescom, UEFA Champions League Final, product launches, global leadership meetings..." },
+                { id: "teamLeadership", label: "Tell us about the teams you led or coordinated. How many people? What was your approach?", type: "textarea", placeholder: "EA teams you managed, cross-functional coordination, mentoring..." },
+                { id: "sonyNumbers", label: "Any numbers or scale you can share? (budgets managed, events delivered, countries covered, etc.)", type: "textarea", placeholder: "Quantifiable achievements carry serious weight on a CV..." }
+                    ]
+        },
+        {
+              id: "recentRole",
+              title: "The Recent Chapter",
+              subtitle: "Your temporary contract role supporting the SVP — let's position this well.",
+              fields: [
+                { id: "svpRoleContext", label: "How did this role come about? Were you specifically asked to come back?", type: "textarea", placeholder: "Being invited back after leaving says a lot about your reputation..." },
+                { id: "svpAchievements", label: "What did you deliver in this role? Any standout moments?", type: "textarea", placeholder: "Quick wins, things you improved, trust you built..." },
+                { id: "svpEndDate", label: "Is this role still ongoing? If not, when did it end?", type: "text", placeholder: "e.g. Ended December 2024 / Still ongoing" }
+                    ]
+        },
+        {
+              id: "skills",
+              title: "Skills & Expertise",
+              subtitle: "Let's go beyond the generic and capture what you're genuinely brilliant at.",
+              fields: [
+                { id: "technicalSkills", label: "What software, tools, and systems are you proficient in?", type: "textarea", placeholder: "Be specific — versions, platforms, anything beyond the basics..." },
+                { id: "languages", label: "Do you speak any other languages?", type: "text", placeholder: "Even conversational level is worth mentioning" },
+                { id: "uniqueSkills", label: "What skills do you have that most EAs don't? What sets you apart?", type: "textarea", placeholder: "Crisis management, creative problem-solving, cultural intelligence, executive coaching..." },
+                { id: "industryKnowledge", label: "What do you understand about the entertainment/gaming industry that gives you an edge?", type: "textarea", placeholder: "24 years of deep industry knowledge is incredibly valuable — what do you know that others wouldn't?" }
+                    ]
+        },
+        {
+              id: "education",
+              title: "Education & Development",
+              subtitle: "Your Film & Television background is actually quite interesting — let's explore it.",
+              fields: [
+                { id: "educationDetail", label: "Tell us more about your HND in Film & Television. How has this creative background helped you professionally?", type: "textarea", placeholder: "Presentation skills, visual thinking, storytelling, creative problem-solving..." },
+                { id: "additionalTraining", label: "Any professional development, courses, or certifications since university?", type: "textarea", placeholder: "Leadership courses, EA-specific training, first aid, anything relevant..." },
+                { id: "sailingCert", label: "Your RYA sailing certificate — is this important to you? Would you like it included?", type: "textarea", placeholder: "It could show adventurousness and capability — or we can leave it in interests" }
+                    ]
+        },
+        {
+              id: "targetRole",
+              title: "What's Next?",
+              subtitle: "Understanding where you want to go helps us point the CV in the right direction.",
+              fields: [
+                { id: "dreamRole", label: "What's your ideal next role? (title, company type, industry, size)", type: "textarea", placeholder: "C-suite EA? Chief of Staff? Office Manager for a founder? Something else entirely?" },
+                { id: "industries", label: "What industries or types of company appeal to you?", type: "textarea", placeholder: "Entertainment, tech, startups, luxury brands, creative agencies..." },
+                { id: "dealbreakers", label: "Any non-negotiables? (location, remote/hybrid, salary expectations, culture)", type: "text", placeholder: "What matters most to you in your next chapter?" },
+                { id: "whyHireYou", label: "Complete this sentence: 'You should hire me because...'", type: "textarea", placeholder: "Be bold! This is about confidence, not arrogance." }
+                    ]
+        },
+        {
+              id: "personality",
+              title: "The Real Rebecca",
+              subtitle: "We want the CV to radiate your energy. Help us capture your personality.",
+              fields: [
+                { id: "interests", label: "Tell us about your interests and passions outside work. What lights you up?", type: "textarea", placeholder: "Writing, sailing, music, photography, cooking — give us the colour and detail..." },
+                { id: "volunteering", label: "Any volunteering, charity work, or community involvement?", type: "textarea", placeholder: "The Prince's Trust work, environmental network, anything else?" },
+                { id: "personalBrand", label: "Three words that best describe you:", type: "text", placeholder: "e.g. Energetic, Resourceful, Unflappable" },
+                { id: "anythingElse", label: "Anything else we should know? Anything you're worried we'll miss?", type: "textarea", placeholder: "This is your catch-all — anything that doesn't fit elsewhere but feels important..." }
+                    ]
+        }
         ];
 
-      let formData = {}, currentSection = 0, viewMode = 'guided', expandedSections = new Set([0]), submitted = false;
+      let formData = {};
+      let currentSection = 0;
+      let viewMode = 'guided';
+      let expandedSections = new Set([0]);
+      let submitted = false;
+      let saveTimer = null;
 
-      function saveLocal() { localStorage.setItem('rebecca_cv_brief', JSON.stringify(formData)); }
-      function loadSaved() { try { formData = JSON.parse(localStorage.getItem('rebecca_cv_brief')) || {}; } catch(e) {} }
-      function render() { loadSaved(); const app = document.getElementById('app'); app.innerHTML = submitted ? renderOutput() : renderForm(); }
-      function renderForm() { const sec = SECTIONS[currentSection], prog = calcProgress(); return `<div class="header"><div class="header-inner"><div class="header-tag">CV Project</div><h1>Rebecca's CV Brief</h1><p>Answer these questions to build your CV. Your answers save automatically.</p></div></div><div class="main"><div class="section-title">${sec.title}</div><p style="margin-bottom:20px;color:#999">${sec.subtitle}</p>${sec.fields.map(f => `<div style="margin-bottom:20px"><label class="field-label">${f.label}</label>${f.type === 'textarea' ? `<textarea class="field-textarea" placeholder="${f.placeholder}" oninput="updateField('${f.id}', this.value)">${formData[f.id]||''}</textarea>` : `<input type="text" class="field-input" placeholder="${f.placeholder}" value="${formData[f.id]||''}" oninput="updateField('${f.id}', this.value)">`}</div>`).join('')}<div style="margin-top:36px;display:flex;justify-content:space-between"><button onclick="goToSection(${currentSection-1})" ${currentSection===0?'disabled':''} style="padding:10px 20px;border:1px solid #ccc;border-radius:6px;cursor:pointer">← Previous</button><button onclick="${currentSection===SECTIONS.length-1?'doSubmit()':'goToSection('+parseInt(currentSection+1)+')'}" style="padding:10px 20px;background:var(--forest);color:white;border:none;border-radius:6px;cursor:pointer">${currentSection===SECTIONS.length-1?'Finish →':'Next →'}</button></div></div>`; }
-      function renderOutput() { let out = 'REBECCA MANLEY — CV BRIEF\n\n'; SECTIONS.forEach(sec => { if(sec.fields.some(f => (formData[f.id]||'').trim())) { out += sec.title.toUpperCase() + '\n' + '─'.repeat(40) + '\n'; sec.fields.forEach(f => { if((formData[f.id]||'').trim()) out += f.label + '\n' + formData[f.id].trim() + '\n\n'; }); } }); return `<div class="output-banner" style="max-width:720px;margin:40px auto"><h1>Thank you, Rebecca!</h1><p>Copy below and send to Jules.</p></div><div style="max-width:720px;margin:0 auto;padding:20px"><button class="copy-btn" onclick="copyToClip()">Copy all responses</button><pre class="output-pre">${out}</pre><button onclick="goBack()" style="margin-top:20px;padding:10px 20px;border:1px solid #ccc;background:white;border-radius:6px;cursor:pointer">← Go back</button></div>`; }
-      function calcProgress() { let filled = 0, total = 0; SECTIONS.forEach(s => { total += s.fields.length; s.fields.forEach(f => { if((formData[f.id]||'').trim()) filled++; }); }); return {filled, total, pct: Math.round((filled/total)*100)}; }
-      function updateField(id, val) { formData[id] = val; saveLocal(); }
-      function goToSection(idx) { if(idx >= 0 && idx < SECTIONS.length) { currentSection = idx; render(); } }
-      function doSubmit() { saveLocal(); submitted = true; render(); }
-      function goBack() { submitted = false; render(); }
-      function copyToClip() { let out = 'REBECCA MANLEY — CV BRIEF\n\n'; SECTIONS.forEach(sec => { if(sec.fields.some(f => (formData[f.id]||'').trim())) { out += sec.title.toUpperCase() + '\n' + '─'.repeat(40) + '\n'; sec.fields.forEach(f => { if((formData[f.id]||'').trim()) out += f.label + '\n' + formData[f.id].trim() + '\n\n'; }); } }); navigator.clipboard.writeText(out); alert('Copied!'); }
-      loadSaved(); render();
+      function loadSaved() {
+          try {
+                const saved = localStorage.getItem('rebecca_cv_brief');
+                if (saved) formData = JSON.parse(saved);
+          } catch(e) {}
+      }
+
+      function saveLocal() {
+          try {
+                localStorage.setItem('rebecca_cv_brief', JSON.stringify(formData));
+                const el = document.getElementById('autosave');
+                el.classList.add('show');
+                setTimeout(() => el.classList.remove('show'), 1800);
+          } catch(e) {}
+      }
+
+      function debounceSave() {
+          clearTimeout(saveTimer);
+          saveTimer = setTimeout(saveLocal, 800);
+      }
+
+      function filledCount(fields) {
+          return fields.filter(f => (formData[f.id] || '').trim()).length;
+      }
+
+      function totalProgress() {
+          let filled = 0, total = 0;
+          SECTIONS.forEach(s => {
+                total += s.fields.length;
+                filled += filledCount(s.fields);
+          });
+          return { filled, total, pct: Math.round((filled / total) * 100) };
+      }
+
+      function esc(str) {
+          const d = document.createElement('div');
+          d.textContent = str;
+          return d.innerHTML;
+      }
+
+      function generateOutput() {
+          let out = '═══════════════════════════════════════════\n';
+          out += '   REBECCA MANLEY — CV BRIEF\n';
+          out += '═══════════════════════════════════════════\n\n';
+          SECTIONS.forEach(sec => {
+                const hasContent = sec.fields.some(f => (formData[f.id] || '').trim());
+                if (hasContent) {
+                        out += '▸ ' + sec.title.toUpperCase() + '\n';
+                        out += '───────────────────────────────────────────\n';
+                        sec.fields.forEach(f => {
+                                  if ((formData[f.id] || '').trim()) {
+                                              out += f.label + '\n';
+                                              out += formData[f.id].trim() + '\n\n';
+                                  }
+                        });
+                        out += '\n';
+                }
+          });
+          return out;
+      }
+
+      function render() {
+          const app = document.getElementById('app');
+
+          if (submitted) {
+                renderOutput(app);
+                return;
+          }
+
+          const prog = totalProgress();
+
+          let html = `
+              <div class="header">
+                    <div class="header-inner">
+                            <div class="header-tag">CV Project</div>
+                                    <h1>Rebecca's CV Brief</h1>
+                                            <p>Take your time with these questions. The more detail you give, the stronger your CV will be.<br>
+                                                    <strong>Your answers are saved automatically</strong> — you can close this and come back any time.</p>
+                                                            <div class="progress-wrap">
+                                                                      <div class="progress-meta">
+                                                                                  <span>${prog.filled} of ${prog.total} questions answered</span>
+                                                                                              <span>${prog.pct}%</span>
+                                                                                                        </div>
+                                                                                                                  <div class="progress-bar">
+                                                                                                                              <div class="progress-fill" style="width:${prog.pct}%"></div>
+                                                                                                                                        </div>
+                                                                                                                                                </div>
+                                                                                                                                                        <div class="view-toggle">
+                                                                                                                                                                  <button class="view-btn ${viewMode === 'guided' ? 'active' : ''}" onclick="setView('guided')">Section by section</button>
+                                                                                                                                                                            <button class="view-btn ${viewMode === 'all' ? 'active' : ''}" onclick="setView('all')">Show everything</button>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                          </div>
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                                  <div class="main" id="formTop">
+                                                                                                                                                                                                        <div class="pills">${renderPills()}</div>
+                                                                                                                                                                                                              ${viewMode === 'guided' ? renderGuided() : renderAll()}
+                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                    `;
+
+          app.innerHTML = html;
+      }
+
+      function renderPills() {
+          return SECTIONS.map((sec, idx) => {
+                const fc = filledCount(sec.fields);
+                const total = sec.fields.length;
+                const isComplete = fc === total;
+                const isActive = viewMode === 'guided' && currentSection === idx;
+                let cls = 'pill';
+                if (isActive) cls += ' active';
+                else if (isComplete) cls += ' complete';
+                let label = '';
+                if (isComplete) label = '✓ ';
+                label += sec.title;
+                if (!isComplete && fc > 0) label += ` (${fc}/${total})`;
+                return `<button class="${cls}" onclick="goToSection(${idx})">${esc(label)}</button>`;
+          }).join('');
+      }
+
+      function renderGuided() {
+          const sec = SECTIONS[currentSection];
+          const total = SECTIONS.length;
+          let html = `<div class="fade-in">`;
+          html += `<div class="section-header">
+              <div class="section-tag">Section ${currentSection + 1} of ${total}</div>
+                  <div class="section-title">${esc(sec.title)}</div>
+                      <div class="section-subtitle">${esc(sec.subtitle)}</div>
+                        </div>`;
+
+          sec.fields.forEach(f => {
+                html += renderField(f);
+          });
+
+          html += `<div class="nav-bar">
+              <button class="nav-btn nav-btn-prev" ${currentSection === 0 ? 'disabled' : ''} onclick="goToSection(${currentSection - 1})">← Previous</button>`;
+
+          if (currentSection < total - 1) {
+                html += `<button class="nav-btn nav-btn-next" onclick="goToSection(${currentSection + 1})">Next section →</button>`;
+          } else {
+                html += `<button class="nav-btn nav-btn-finish" onclick="doSubmit()">Finish & generate brief ✓</button>`;
+          }
+          html += `</div></div>`;
+          return html;
+      }
+
+      function renderAll() {
+          let html = '';
+          SECTIONS.forEach((sec, idx) => {
+                const isOpen = expandedSections.has(idx);
+                const fc = filledCount(sec.fields);
+                const total = sec.fields.length;
+                html += `<div class="accordion-item">
+                      <button class="accordion-header" onclick="toggleAccordion(${idx})">
+                              <div>
+                                        <div class="accordion-title">${esc(sec.title)}</div>
+                                                  <div class="accordion-count">${fc}/${total} answered</div>
+                                                          </div>
+                                                                  <span class="accordion-chevron ${isOpen ? 'open' : ''}">▾</span>
+                                                                        </button>`;
+                if (isOpen) {
+                        html += `<div class="accordion-body">
+                                <div class="section-subtitle">${esc(sec.subtitle)}</div>`;
+                        sec.fields.forEach(f => { html += renderField(f); });
+                        html += `</div>`;
+                }
+                html += `</div>`;
+          });
+          html += `<button class="submit-all" onclick="doSubmit()">Finish & generate brief ✓</button>`;
+          return html;
+      }
+
+      function renderField(f) {
+          const val = esc(formData[f.id] || '');
+          if (f.type === 'textarea') {
+                return `<div class="field-group">
+                      <label class="field-label">${esc(f.label)}</label>
+                            <textarea class="field-textarea" placeholder="${esc(f.placeholder)}" oninput="updateField('${f.id}', this.value)">${val}</textarea>
+                                </div>`;
+          }
+          return `<div class="field-group">
+              <label class="field-label">${esc(f.label)}</label>
+                  <input type="text" class="field-input" placeholder="${esc(f.placeholder)}" value="${val}" oninput="updateField('${f.id}', this.value)">
+                    </div>`;
+      }
+
+      function renderOutput(app) {
+          const output = generateOutput();
+          app.innerHTML = `
+              <div style="min-height:100vh; background:var(--cream);">
+                    <div class="output-screen">
+                            <div class="output-banner">
+                                      <div class="header-tag">Brilliant — All Done</div>
+                                                <h1>Thank you, Rebecca!</h1>
+                                                          <p>Copy everything below and send it to Jules. This is exactly what we need to build you a CV that does justice to your incredible career.</p>
+                                                                  </div>
+                                                                          <button class="copy-btn" id="copyBtn" onclick="copyOutput()">
+                                                                                    📋 Copy all responses to clipboard
+                                                                                            </button>
+                                                                                                    <div class="copy-hint">Then paste it into an email, WhatsApp, or wherever works best</div>
+                                                                                                            <pre class="output-pre">${esc(output)}</pre>
+                                                                                                                    <button class="back-btn" onclick="goBack()">← Go back and edit</button>
+                                                                                                                          </div>
+                                                                                                                              </div>
+                                                                                                                                `;
+      }
+
+      function updateField(id, value) {
+          formData[id] = value;
+          debounceSave();
+          const prog = totalProgress();
+          const meta = document.querySelector('.progress-meta');
+          const fill = document.querySelector('.progress-fill');
+          if (meta) meta.innerHTML = `<span>${prog.filled} of ${prog.total} questions answered</span><span>${prog.pct}%</span>`;
+          if (fill) fill.style.width = prog.pct + '%';
+      }
+
+      function setView(mode) {
+          viewMode = mode;
+          if (mode === 'all') expandedSections = new Set(SECTIONS.map((_, i) => i));
+          render();
+      }
+
+      function goToSection(idx) {
+          if (idx < 0 || idx >= SECTIONS.length) return;
+          currentSection = idx;
+          expandedSections.add(idx);
+          if (viewMode === 'all') { viewMode = 'guided'; }
+          render();
+          const top = document.getElementById('formTop');
+          if (top) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function toggleAccordion(idx) {
+          if (expandedSections.has(idx)) expandedSections.delete(idx);
+          else expandedSections.add(idx);
+          render();
+      }
+
+      function doSubmit() {
+          saveLocal();
+          submitted = true;
+          render();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function goBack() {
+          submitted = false;
+          render();
+      }
+
+      function copyOutput() {
+          const text = generateOutput();
+          navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '✓ Copied! Now send it over';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                        btn.textContent = '📋 Copy all responses to clipboard';
+                        btn.classList.remove('copied');
+                }, 3000);
+          });
+      }
+
+      loadSaved();
+      render();
+
     </script>
+
   </body>
+
 </html>html>
     </script>
   </body>
